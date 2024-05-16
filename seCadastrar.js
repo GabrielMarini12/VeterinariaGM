@@ -1,3 +1,4 @@
-import { acessarLogin } from "./src/utilidades";
+import { acessarLogin, acessarPaginaInicial } from "./src/utilidades";
 
 acessarLogin();
+acessarPaginaInicial();

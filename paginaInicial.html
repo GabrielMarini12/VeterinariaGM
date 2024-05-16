@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>GM Vererinária</title>
+  </head>
+  <body>
+    <div class="flex flex-col bg-slate-300 h-[100vh]">
+      <section
+        class="flex flex-col bg-cyan-700 px-[10px] py-[25px] rounded-br-lg rounded-bl-lg text-slate-200"
+      >
+        <p>Olá <span class="text-[22px] font-bold">Jerry!</span></p>
+        <p>Como você está se sentindo hoje?</p>
+      </section>
+
+      <section class="mt-[25px] flex justify-around">
+        <button class="text-4xl">😀</button>
+        <button class="text-4xl">😔</button>
+        <button class="text-4xl">🤒</button>
+        <button class="text-4xl">😐</button>
+      </section>
+
+      <section class="mt-[8px] flex justify-around pr-2">
+        <p class="text-[14px]">Ótimo</p>
+        <p class="text-[14px]">Triste</p>
+        <p class="text-[14px]">Doente</p>
+        <p class="text-[14px]">Ok</p>
+      </section>
+
+      <section class="py-[50px] px-[10px]">
+        <p class="text-cyan-700 uppercase mb-[10px]">Consulta & Agendamentos</p>
+
+        <div
+          id="agendar-consultas"
+          class="flex bg-slate-200 p-[10px] rounded-lg h-[100px] mb-[10px]"
+        >
+          <img
+            src="./assets/agendamento.jpg"
+            alt="Calendário de agendamento"
+            class="w-[100px] rounded-lg mr-[10px] opacity-60"
+          />
+          <p class="text-cyan-700">Agende sua consulta...</p>
+        </div>
+
+        <div
+          id="ver-consultas"
+          class="flex bg-slate-200 p-[10px] rounded-lg h-[100px] mb-[10px]"
+        >
+          <img
+            src="./assets/consulta.jpg"
+            alt="Calendário de consulta"
+            class="w-[100px] rounded-lg mr-[10px] opacity-60"
+          />
+          <p class="text-cyan-700">Veja suas consultas marcadas...</p>
+        </div>
+      </section>
+
+      <footer
+        class="fixed w-[100%] bottom-0 bg-cyan-700 flex py-[14px] justify-around"
+      >
+        <a href="./paginaInicial.html">
+          <i class="fa-solid fa-house w-[25px] text-slate-200"></i>
+        </a>
+        <a href="./agendarConsultas.html">
+          <i class="fa-solid fa-pen-to-square w-[25px] text-slate-200"></i>
+        </a>
+        <a href="./verConsultas.html">
+          <i class="fa-solid fa-calendar-days w-[25px] text-slate-200"></i>
+        </a>
+        <a href="./index.html">
+          <i class="fa-solid fa-right-from-bracket w-[25px] text-slate-200"></i>
+        </a>
+      </footer>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/a101359c7d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./paginaInicial.js"></script>
+  </body>
+</html>
