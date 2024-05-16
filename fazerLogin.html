@@ -22,15 +22,37 @@
           alt="Imagem de um cachorro"
           class="absolute bottom-[-120px] left-[210px]"
         />
-        <p class="font-bold text-[26px]">Vetmedic GM</p>
+        <form class="flex flex-col">
+          <p
+            class="mt-[-70px] flex justify-center mb-[20px] text-2xl text-cyan-700 uppercase"
+          >
+            Login
+          </p>
+
+          <label for="name" class="text-cyan-700 mb-[5px]">Nome</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Nome do seu animal..."
+            class="p-[8px] w-[250px] rounded-md border-none mb-[8px] placeholder:text-gray-300"
+          />
+
+          <label for="password" class="text-cyan-700 mb-[5px]">Senha</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Sua senha..."
+            class="p-[8px] w-[250px] rounded-md border-none mb-[8px] placeholder:text-gray-300"
+          />
+        </form>
       </div>
 
       <div class="flex flex-col items-center">
         <button
-          id="btn-logar"
+          id="btn-entrar"
           class="w-[340px] p-[16px] uppercase rounded-md border-none bg-cyan-700 text-slate-200 mb-[10px] font-bold"
         >
-          Logar
+          Entrar
         </button>
         <p class="text-[15px]">
           Não tem uma conta?
@@ -47,6 +69,6 @@
       src="https://kit.fontawesome.com/a101359c7d.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./fazerLogin.js"></script>
   </body>
 </html>
