@@ -1,3 +1,5 @@
+import { checkInputs, checkInputsLogin } from "./cadastro";
+
 export function acessarLogin() {
   const btnLogar = document.getElementById("btn-logar");
 
@@ -14,12 +16,26 @@ export function acessarCadastro() {
   });
 }
 
-export function acessarPaginaInicial() {
+export function fazerCadastro() {
   const btnEntrar = document.getElementById("btn-entrar");
-
   btnEntrar.addEventListener("click", () => {
-    window.location.href = "./paginaInicial.html";
+    checkInputs();
   });
+}
+
+export function fazerLogin() {
+  const btnEntrarLogin = document.getElementById("btn-entrar-login");
+  btnEntrarLogin.addEventListener("click", () => {
+    checkInputsLogin();
+  });
+}
+
+export function salvarLocalStorage(chave, informacao) {
+  localStorage.setItem(chave, JSON.stringify(informacao));
+}
+
+export function lerLocalStorage(chave) {
+  return JSON.parse(localStorage.getItem(chave));
 }
 
 export function agendarConsultas() {

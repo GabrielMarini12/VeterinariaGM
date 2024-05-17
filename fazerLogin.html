@@ -20,7 +20,7 @@
         <img
           src="./assets/logo-cao.png"
           alt="Imagem de um cachorro"
-          class="absolute bottom-[-120px] left-[210px]"
+          class="absolute right-0 top-0"
         />
         <form class="flex flex-col">
           <p
@@ -29,27 +29,35 @@
             Login
           </p>
 
-          <label for="name" class="text-cyan-700 mb-[5px]">Nome</label>
+          <label for="name-login" class="text-cyan-700 mb-[5px]">Nome</label>
           <input
             type="text"
-            id="name"
+            id="name-login"
             placeholder="Nome do seu animal..."
-            class="p-[8px] w-[250px] rounded-md border-none mb-[8px] placeholder:text-gray-300"
+            class="p-[8px] w-[250px] rounded-md border-none mb-[4px] placeholder:text-gray-300"
           />
+          <small id="error-name-login" class="text-red-600 hidden"
+            >O nome está incorreto</small
+          >
 
-          <label for="password" class="text-cyan-700 mb-[5px]">Senha</label>
+          <label for="password-login" class="text-cyan-700 mb-[5px]"
+            >Senha</label
+          >
           <input
             type="password"
-            id="password"
+            id="password-login"
             placeholder="Sua senha..."
-            class="p-[8px] w-[250px] rounded-md border-none mb-[8px] placeholder:text-gray-300"
+            class="p-[8px] w-[250px] rounded-md border-none mb-[4px] placeholder:text-gray-300"
           />
+          <small id="error-password-login" class="text-red-600 hidden"
+            >A senha está incorreta</small
+          >
         </form>
       </div>
 
       <div class="flex flex-col items-center">
         <button
-          id="btn-entrar"
+          id="btn-entrar-login"
           class="w-[340px] p-[16px] uppercase rounded-md border-none bg-cyan-700 text-slate-200 mb-[10px] font-bold"
         >
           Entrar

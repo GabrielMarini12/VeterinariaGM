@@ -20,7 +20,7 @@
         <img
           src="./assets/logo-cao.png"
           alt="Imagem de um cachorro"
-          class="absolute bottom-[-120px] left-[210px]"
+          class="absolute right-0 top-0"
         />
         <form class="flex flex-col">
           <p
@@ -34,16 +34,22 @@
             type="text"
             id="name"
             placeholder="Nome do seu animal..."
-            class="p-[8px] w-[250px] rounded-md border-none mb-[8px] placeholder:text-gray-300"
+            class="p-[8px] w-[250px] rounded-md border-none mb-[4px] placeholder:text-gray-300"
           />
+          <small id="error-name" class="text-red-600 hidden"
+            >Digite um nome de usuário válido</small
+          >
 
           <label for="password" class="text-cyan-700 mb-[5px]">Senha</label>
           <input
             type="password"
             id="password"
             placeholder="Sua senha..."
-            class="p-[8px] w-[250px] rounded-md border-none mb-[8px] placeholder:text-gray-300"
+            class="p-[8px] w-[250px] rounded-md border-none mb-[4px] placeholder:text-gray-300"
           />
+          <small id="error-password" class="text-red-600 hidden"
+            >Sua senha deve ter 4 caracteres ou mais</small
+          >
 
           <label for="repeat-password" class="text-cyan-700 mb-[5px]"
             >Repita a senha</label
@@ -52,8 +58,11 @@
             type="password"
             id="repeat-password"
             placeholder="Repita sua senha..."
-            class="p-[8px] w-[250px] rounded-md border-none mb-[8px] placeholder:text-gray-300"
+            class="p-[8px] w-[250px] rounded-md border-none mb-[4px] placeholder:text-gray-300"
           />
+          <small id="error-repeat-password" class="text-red-600 hidden"
+            >As senhas não conferem</small
+          >
         </form>
       </div>
 
@@ -62,7 +71,7 @@
           id="btn-entrar"
           class="w-[340px] p-[16px] uppercase rounded-md border-none bg-cyan-700 text-slate-200 mb-[10px] font-bold"
         >
-          Entrar
+          Cadastrar
         </button>
         <p class="text-[15px]">
           Já tem uma conta?

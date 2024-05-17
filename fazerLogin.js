@@ -1,4 +1,4 @@
-import { acessarCadastro, acessarPaginaInicial } from "./src/utilidades";
+import { acessarCadastro, fazerLogin } from "./src/utilidades";
 
+fazerLogin();
 acessarCadastro();
-acessarPaginaInicial();
