@@ -9,69 +9,28 @@
   <body>
     <div class="flex flex-col bg-slate-300 h-[100vh]">
       <section
+        id="section-agendar-consultas-texto"
         class="flex flex-col bg-cyan-700 px-[10px] py-[25px] rounded-br-lg rounded-bl-lg text-slate-200"
-      >
-        <span class="text-[22px] font-bold">Jerry!</span>
-        <p>Selecione o Dr pelo qual deseja ser atendido...</p>
-      </section>
+      ></section>
 
-      <section class="py-[50px] px-[10px]">
+      <section id="container-medicos-credenciados" class="py-[50px] px-[10px]">
         <p class="text-cyan-700 uppercase mb-[10px]">Credenciados</p>
-
-        <div class="flex bg-slate-200 p-[10px] rounded-lg h-[100px] mb-[10px]">
-            <img src="./assets/doutor1.jpg" alt="Foto de um doutor" class="w-[110px] rounded-lg mr-[10px] opacity-60"/>
-           
-            <div class="flex flex-col text-cyan-700">
-                <p class="font-medium">Gabriel Marini</p>
-                <p class="text-sm">Ver mais informações...</p>
-            </div>
-            
-        </div>
-  
-        <div class="flex bg-slate-200 p-[10px] rounded-lg h-[100px] mb-[10px]">
-            <img src="./assets/doutora1.jpg" alt="Foto de uma doutora" class="w-[110px] rounded-lg mr-[10px] opacity-60"/>
-           
-            <div class="flex flex-col text-cyan-700">
-                <p class="font-medium">Sheila Marini</p>
-                <p class="text-sm">Ver mais informações...</p>
-            </div>
-            
-        </div>
-  
-        <div class="flex bg-slate-200 p-[10px] rounded-lg h-[100px] mb-[10px]">
-            <img src="./assets/doutor2.jpg" alt="Foto de um doutor" class="w-[110px] rounded-lg mr-[10px] opacity-60"/>
-           
-            <div class="flex flex-col text-cyan-700">
-                <p class="font-medium">Rodrigo Grespan</p>
-                <p class="text-sm">Ver mais informações...</p>
-            </div>
-            
-        </div>
-  
-        <div class="flex bg-slate-200 p-[10px] rounded-lg h-[100px] mb-[30px]">
-            <img src="./assets/doutora2.jpg" alt="Foto de uma doutora" class="w-[110px] rounded-lg mr-[10px] opacity-60"/>
-            
-            <div class="flex flex-col text-cyan-700">
-                <p class="font-medium">Luiza Marini</p>
-                <p class="text-sm">Ver mais informações...</p>
-            </div>
-            
-        </div>
+      </section>
 
       <footer
         class="fixed w-[100%] bottom-0 bg-cyan-700 flex py-[14px] justify-around"
       >
         <a href="./paginaInicial.html">
-          <i class="fa-solid fa-house w-[25px] text-slate-200"></i>
+          <i class="fa-solid fa-house text-slate-200"></i>
         </a>
         <a href="./agendarConsultas.html">
-          <i class="fa-solid fa-pen-to-square w-[25px] text-slate-200"></i>
+          <i class="fa-solid fa-pen-to-square text-slate-200"></i>
         </a>
         <a href="./verConsultas.html">
-          <i class="fa-solid fa-calendar-days w-[25px] text-slate-200"></i>
+          <i class="fa-solid fa-calendar-days text-slate-200"></i>
         </a>
         <a href="./index.html">
-          <i class="fa-solid fa-right-from-bracket w-[25px] text-slate-200"></i>
+          <i class="fa-solid fa-right-from-bracket text-slate-200"></i>
         </a>
       </footer>
     </div>
@@ -80,6 +39,7 @@
       src="https://kit.fontawesome.com/a101359c7d.js"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="./agendarConsultas.js"></script>
     <script type="module" src="./paginaInicial.js"></script>
   </body>
 </html>
