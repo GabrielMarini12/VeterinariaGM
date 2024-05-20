@@ -117,6 +117,16 @@ export function verConsultas() {
   });
 }
 
+export function verInfoDoutor() {
+  const btnVerInfoDoutor = document.getElementById(
+    "btn-mais-informacoes-doutores"
+  );
+
+  btnVerInfoDoutor.addEventListener("click", () => {
+    window.location.href = "./infoDoutor.html";
+  });
+}
+
 export function pegarNomeUsuarioPaginaInicial() {
   const nomeUsuario = lerLocalStorage("nome");
   const textoBoasVindas = `

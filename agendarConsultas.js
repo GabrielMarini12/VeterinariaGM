@@ -1,5 +1,9 @@
 import { criarDoutoresCredenciados } from "./src/cardDoutores";
-import { pegarNomeUsuarioAgendarConsultas } from "./src/utilidades";
+import {
+  pegarNomeUsuarioAgendarConsultas,
+  verInfoDoutor,
+} from "./src/utilidades";
 
 pegarNomeUsuarioAgendarConsultas();
 criarDoutoresCredenciados();
+verInfoDoutor();
