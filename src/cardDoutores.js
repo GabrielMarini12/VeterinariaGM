@@ -1,4 +1,4 @@
-import { medicosCredenciados } from "./utilidades";
+import { medicosCredenciados, salvarLocalStorage } from "./utilidades";
 
 export function criarDoutoresCredenciados() {
   for (const medicoCredenciado of medicosCredenciados) {
@@ -9,7 +9,7 @@ export function criarDoutoresCredenciados() {
             <div class="flex flex-col w-full relative text-cyan-700">
                 <p class="font-medium">${medicoCredenciado.nome}</p>
                 <p class="text-sm">Ver mais informações...</p>
-                <i id="btn-mais-informacoes-doutores" class="fa-solid fa-circle-plus absolute right-0 bottom-0 cursor-pointer text-lg text-green-600"></i>
+                <i id="btn-mais-informacoes-doutores-${medicoCredenciado.id}" class="fa-solid fa-circle-plus absolute right-0 bottom-0 cursor-pointer text-lg text-green-600"></i>
             </div>         
         </div>
         `;

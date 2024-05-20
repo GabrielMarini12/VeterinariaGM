@@ -9,12 +9,33 @@
   <body>
     <div class="flex flex-col bg-slate-300 h-[100vh]">
       <section
-        id="section-agendar-consultas-texto"
+        id="section-boas-vindas-calendario"
         class="flex flex-col bg-cyan-700 px-[10px] py-[25px] rounded-br-lg rounded-bl-lg text-slate-200"
       ></section>
 
-      <section id="container-medicos-credenciados" class="py-[50px] px-[10px]">
-        <p class="text-cyan-700 uppercase mb-[10px]">Credenciados</p>
+      <section class="py-[50px] px-[10px] relative">
+        <p class="text-cyan-700 uppercase mb-[10px]">
+          Calendário de agendamentos
+        </p>
+
+        <div
+          class="flex bg-slate-200 p-[10px] rounded-lg h-[320px] mb-[10px]"
+        ></div>
+
+        <div
+          class="absolute bottom-0 left-4 bg-red-600 px-2 py-1 rounded-[50%] text-slate-200"
+        >
+          <a href="./infoDoutor.html">
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+        <div
+          class="absolute bottom-0 right-4 bg-green-600 px-2 py-1 rounded-md text-slate-200"
+        >
+          <a href="./infoDoutor.html">
+            <i class="fa-solid fa-check"></i> Confirmar
+          </a>
+        </div>
       </section>
 
       <footer
@@ -39,6 +60,6 @@
       src="https://kit.fontawesome.com/a101359c7d.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./agendarConsultas.js"></script>
+    <script type="module" src="./agendarCalendario.js"></script>
   </body>
 </html>
