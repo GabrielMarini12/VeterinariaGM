@@ -118,20 +118,36 @@ export function verConsultas() {
 }
 
 export function pegarNomeUsuarioPaginaInicial() {
+  const nomeUsuario = lerLocalStorage("nome");
   const textoBoasVindas = `
-        <p>Olá <span class="text-[22px] font-bold">${lerLocalStorage(
-          "nome"
-        )}</span></p>
+        <p>Olá <span class="text-[22px] font-bold">${
+          nomeUsuario[0].toUpperCase() + nomeUsuario.substring(1)
+        }</span></p>
         <p>Como você está se sentindo hoje?</p>
   `;
   document.getElementById("section-boas-vindas").innerHTML = textoBoasVindas;
 }
 
 export function pegarNomeUsuarioAgendarConsultas() {
+  const nomeUsuario = lerLocalStorage("nome");
   const textoCabecalho = `
-        <span class="text-[22px] font-bold">${lerLocalStorage("nome")}</span>
+        <span class="text-[22px] font-bold">${
+          nomeUsuario[0].toUpperCase() + nomeUsuario.substring(1)
+        }</span>
         <p>Selecione o Dr pelo qual deseja ser atendido...</p>
   `;
   document.getElementById("section-agendar-consultas-texto").innerHTML =
+    textoCabecalho;
+}
+
+export function pegarNomeUsuarioVerConsultas() {
+  const nomeUsuario = lerLocalStorage("nome");
+  const textoCabecalho = `
+        <span class="text-[22px] font-bold">${
+          nomeUsuario[0].toUpperCase() + nomeUsuario.substring(1)
+        }</span>
+        <p>Veja suas consultas agendadas...</p>
+  `;
+  document.getElementById("section-ver-consultas-texto").innerHTML =
     textoCabecalho;
 }

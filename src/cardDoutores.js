@@ -9,8 +9,7 @@ export function criarDoutoresCredenciados() {
             <div class="flex flex-col text-cyan-700">
                 <p class="font-medium">${medicoCredenciado.nome}</p>
                 <p class="text-sm">Ver mais informações...</p>
-            </div>
-            
+            </div>         
         </div>
         `;
     document.getElementById("container-medicos-credenciados").innerHTML +=
