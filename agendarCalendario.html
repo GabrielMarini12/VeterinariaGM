@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./agendarCalendario.css" />
     <title>GM Vererinária</title>
   </head>
   <body>
@@ -18,54 +19,72 @@
           Calendário de agendamentos
         </p>
 
-        <div class="bg-slate-200 p-[10px] rounded-lg h-[90%] mb-[10px]">
-          <header class="flex justify-between items-center px-[10px] py-[15px]">
-            <p id="data-atual" class="font-bold text-lg text-cyan-950"></p>
-            <div class="icons">
-              <span id="voltar"
-                ><i
-                  class="fa-solid fa-circle-chevron-left mr-3 text-cyan-950"
-                ></i
-              ></span>
-              <span id="proximo">
-                <i
-                  class="fa-solid fa-circle-chevron-right ml-3 text-cyan-950"
-                ></i>
-              </span>
+        <div
+          id="selecionador-data-container"
+          class="relative flex flex-col items-center justify-center p-[10px]"
+        >
+          <div class="datepicker-container">
+            <input
+              type="text"
+              class="date-input"
+              placeholder="Selecionar data"
+            />
+
+            <div class="datepicker" hidden>
+              <!-- .datepicker-header -->
+              <div class="datepicker-header">
+                <button class="prev">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+                <div>
+                  <select class="month-input">
+                    <option>Janeiro</option>
+                    <option>Favereiro</option>
+                    <option>Março</option>
+                    <option>Abril</option>
+                    <option>Maio</option>
+                    <option>Junho</option>
+                    <option>Julho</option>
+                    <option>Agosto</option>
+                    <option>Setembro</option>
+                    <option>Outubro</option>
+                    <option>Novembro</option>
+                    <option>Dezembro</option>
+                  </select>
+                  <input type="number" class="year-input" />
+                </div>
+
+                <button class="next">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+              <!-- /.datepicker-header -->
+
+              <!-- .days -->
+              <div class="days">
+                <span>Dom</span>
+                <span>Seg</span>
+                <span>Ter</span>
+                <span>Qua</span>
+                <span>Qui</span>
+                <span>Sex</span>
+                <span>Sáb</span>
+              </div>
+              <!-- /.days -->
+
+              <!-- .dates -->
+              <div class="dates"></div>
+              <!-- /.dates -->
+
+              <!-- .datepicker-footer -->
+              <div class="datepicker-footer">
+                <button class="cancel">Cancelar</button>
+                <button class="apply">Agendar</button>
+              </div>
+              <!-- /.datepicker-footer -->
             </div>
-          </header>
-
-          <div class="p-[10px]">
-            <ul class="flex flex-wrap text-center">
-              <li class="w-[14%] font-semibold">Dom</li>
-              <li class="w-[14%] font-semibold">Seg</li>
-              <li class="w-[14%] font-semibold">Ter</li>
-              <li class="w-[14%] font-semibold">Qua</li>
-              <li class="w-[14%] font-semibold">Qui</li>
-              <li class="w-[14%] font-semibold">Sex</li>
-              <li class="w-[14%] font-semibold">Sáb</li>
-            </ul>
-
-            <ul
-              id="dias"
-              class="flex flex-wrap items-center text-center mb-[10px]"
-            ></ul>
           </div>
-        </div>
-
-        <div
-          class="absolute bottom-0 left-4 bg-red-600 px-2 py-1 rounded-[50%] text-slate-200"
-        >
-          <a href="./infoDoutor.html">
-            <i class="fa-solid fa-arrow-left"></i>
-          </a>
-        </div>
-        <div
-          class="absolute bottom-0 right-4 bg-green-600 px-2 py-1 rounded-md text-slate-200"
-        >
-          <a href="./infoDoutor.html">
-            <i class="fa-solid fa-check"></i> Confirmar
-          </a>
         </div>
       </section>
 

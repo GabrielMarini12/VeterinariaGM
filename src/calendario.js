@@ -1,76 +1,181 @@
 import { salvarLocalStorage } from "./utilidades";
 
-const dataAtual = document.getElementById("data-atual");
-const dias = document.getElementById("dias");
-const iconePassarEVoltarMes = document.querySelectorAll(".icons span");
+export function criarCalendario() {
+  const datepicker = document.querySelector(".datepicker");
+  const datepickerContainer = document.querySelector(".datepicker-container");
+  const dateInput = document.querySelector(".date-input");
+  const yearInput = datepicker.querySelector(".year-input");
+  const monthInput = datepicker.querySelector(".month-input");
+  const cancelBtn = datepicker.querySelector(".cancel");
+  const applyBtn = datepicker.querySelector(".apply");
+  const nextBtn = datepicker.querySelector(".next");
+  const prevBtn = datepicker.querySelector(".prev");
+  const dates = datepicker.querySelector(".dates");
 
-let date = new Date(),
-  anoAtual = date.getFullYear(),
-  mesAtual = date.getMonth();
+  let selectedDate = new Date();
+  let year = selectedDate.getFullYear();
+  let month = selectedDate.getMonth();
 
-const meses = [
-  "Janeiro",
-  "Fevereiro",
-  "Março",
-  "Abril",
-  "Maio",
-  "Junho",
-  "Julho",
-  "Agosto",
-  "Setembro",
-  "Outubro",
-  "Novembro",
-  "Dezembro",
-];
-
-export function renderizarCalendario() {
-  let primeiroDiaDoMes = new Date(anoAtual, mesAtual, 1).getDay(),
-    ultimaDataDoMes = new Date(anoAtual, mesAtual + 1, 0).getDate(),
-    ultimoDiaDoMes = new Date(anoAtual, mesAtual, ultimaDataDoMes).getDay(),
-    ultimaDataDoUltimoMes = new Date(anoAtual, mesAtual, 0).getDate();
-
-  let liTag = "";
-
-  for (let i = primeiroDiaDoMes; i > 0; i--) {
-    liTag += `<li class="w-[14%] mt-[10px] text-slate-300">${
-      ultimaDataDoUltimoMes - i + 1
-    }</li>`;
-  }
-
-  for (let i = 1; i <= ultimaDataDoMes; i++) {
-    let eHoje =
-      i === date.getDate() &&
-      mesAtual === new Date().getMonth() &&
-      anoAtual === new Date().getFullYear()
-        ? "bg-cyan-900 text-slate-200 rounded-[50%] p-2 opacity-60"
-        : "";
-    liTag += `<li class="w-[14%] mt-[10px] ${eHoje}">${i}</li>`;
-  }
-
-  for (let i = ultimoDiaDoMes; i < 6; i++) {
-    liTag += `<li class="w-[14%] mt-[10px] text-slate-300">${
-      i - ultimoDiaDoMes + 1
-    }</li>`;
-  }
-
-  dataAtual.innerText = `${meses[mesAtual]} ${anoAtual}`;
-  dias.innerHTML = liTag;
-}
-
-export function iconesPassarEVoltarMes() {
-  iconePassarEVoltarMes.forEach((icon) => {
-    icon.addEventListener("click", () => {
-      mesAtual = icon.id === "voltar" ? mesAtual - 1 : mesAtual + 1;
-
-      if (mesAtual < 0 || mesAtual > 11) {
-        date = new Date(anoAtual, mesAtual);
-        anoAtual = date.getFullYear();
-        mesAtual = date.getMonth();
-      } else {
-        date = new Date();
-      }
-
-      renderizarCalendario();
-    });
+  // show datepicker
+  dateInput.addEventListener("click", () => {
+    datepicker.hidden = false;
   });
+
+  // hide datepicker
+  cancelBtn.addEventListener("click", () => {
+    datepicker.hidden = true;
+    dateInput.value = "";
+    localStorage.setItem("Dia", "");
+    localStorage.setItem("Mes", "");
+    localStorage.setItem("Ano", "");
+  });
+
+  // handle apply button click event
+  applyBtn.addEventListener("click", () => {
+    // set the selected date to date input
+    dateInput.value = selectedDate.toLocaleDateString("pt-BR", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+    // hide datepicker
+    datepicker.hidden = true;
+
+    const agendamentoComSucesso = document.createElement("p");
+    agendamentoComSucesso.innerText = "Agendamento realizado com sucesso";
+    agendamentoComSucesso.className = "agendamento-sucesso";
+
+    const direcionamentoParaPaginaDeAgendamentos =
+      document.createElement("buttom");
+    direcionamentoParaPaginaDeAgendamentos.innerText = "Visualizar";
+    direcionamentoParaPaginaDeAgendamentos.className =
+      "direcionamento-agendamentos";
+
+    agendamentoComSucesso.appendChild(direcionamentoParaPaginaDeAgendamentos);
+    datepickerContainer.appendChild(agendamentoComSucesso);
+
+    dateInput.disabled = true;
+
+    direcionamentoParaPaginaDeAgendamentos.addEventListener("click", () => {
+      window.location.href = "./verConsultas.html";
+    });
+
+    salvarLocalStorage("Mes", month + 1);
+    salvarLocalStorage("Ano", year);
+  });
+
+  // handle next month nav
+  nextBtn.addEventListener("click", () => {
+    if (month === 11) year++;
+    month = (month + 1) % 12;
+    displayDates();
+  });
+
+  // handle prev month nav
+  prevBtn.addEventListener("click", () => {
+    if (month === 0) year--;
+    month = (month - 1 + 12) % 12;
+    displayDates();
+  });
+
+  // handle month input change event
+  monthInput.addEventListener("change", () => {
+    month = monthInput.selectedIndex;
+    displayDates();
+  });
+
+  // handle year input change event
+  yearInput.addEventListener("change", () => {
+    year = yearInput.value;
+    displayDates();
+  });
+
+  const updateYearMonth = () => {
+    monthInput.selectedIndex = month;
+    yearInput.value = year;
+  };
+
+  const handleDateClick = (e) => {
+    const button = e.target;
+
+    // remove the 'selected' class from other buttons
+    const selected = dates.querySelector(".selected");
+    selected && selected.classList.remove("selected");
+
+    // add the 'selected' class to current button
+    button.classList.add("selected");
+
+    // set the selected date
+    selectedDate = new Date(year, month, parseInt(button.textContent));
+
+    salvarLocalStorage("Dia", button.textContent);
+  };
+
+  // render the dates in the calendar interface
+  const displayDates = () => {
+    // update year & month whenever the dates are updated
+    updateYearMonth();
+
+    // clear the dates
+    dates.innerHTML = "";
+
+    //* display the last week of previous month
+
+    // get the last date of previous month
+    const lastOfPrevMonth = new Date(year, month, 0);
+
+    for (let i = 0; i <= lastOfPrevMonth.getDay(); i++) {
+      const text = lastOfPrevMonth.getDate() - lastOfPrevMonth.getDay() + i;
+      const button = createButton(text, true, -1);
+      dates.appendChild(button);
+    }
+
+    //* display the current month
+
+    // get the last date of the month
+    const lastOfMOnth = new Date(year, month + 1, 0);
+
+    for (let i = 1; i <= lastOfMOnth.getDate(); i++) {
+      const button = createButton(i, false);
+      button.addEventListener("click", handleDateClick);
+      dates.appendChild(button);
+    }
+
+    //* display the first week of next month
+
+    const firstOfNextMonth = new Date(year, month + 1, 1);
+
+    for (let i = firstOfNextMonth.getDay(); i < 7; i++) {
+      const text = firstOfNextMonth.getDate() - firstOfNextMonth.getDay() + i;
+
+      const button = createButton(text, true, 1);
+      dates.appendChild(button);
+    }
+  };
+
+  const createButton = (text, isDisabled = false, type = 0) => {
+    const currentDate = new Date();
+
+    // determine the date to compare based on the button type
+    let comparisonDate = new Date(year, month + type, text);
+
+    // check if the current button is the date today
+    const isToday =
+      currentDate.getDate() === text &&
+      currentDate.getFullYear() === year &&
+      currentDate.getMonth() === month;
+
+    // check if the current button is selected
+    const selected = selectedDate.getTime() === comparisonDate.getTime();
+
+    const button = document.createElement("button");
+    button.textContent = text;
+    button.disabled = isDisabled;
+    button.classList.toggle("today", isToday);
+    button.classList.toggle("selected", selected);
+
+    return button;
+  };
+
+  displayDates();
 }
