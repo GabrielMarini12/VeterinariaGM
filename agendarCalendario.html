@@ -18,9 +18,40 @@
           Calendário de agendamentos
         </p>
 
-        <div
-          class="flex bg-slate-200 p-[10px] rounded-lg h-[320px] mb-[10px]"
-        ></div>
+        <div class="bg-slate-200 p-[10px] rounded-lg h-[90%] mb-[10px]">
+          <header class="flex justify-between items-center px-[10px] py-[15px]">
+            <p id="data-atual" class="font-bold text-lg text-cyan-950"></p>
+            <div class="icons">
+              <span id="voltar"
+                ><i
+                  class="fa-solid fa-circle-chevron-left mr-3 text-cyan-950"
+                ></i
+              ></span>
+              <span id="proximo">
+                <i
+                  class="fa-solid fa-circle-chevron-right ml-3 text-cyan-950"
+                ></i>
+              </span>
+            </div>
+          </header>
+
+          <div class="p-[10px]">
+            <ul class="flex flex-wrap text-center">
+              <li class="w-[14%] font-semibold">Dom</li>
+              <li class="w-[14%] font-semibold">Seg</li>
+              <li class="w-[14%] font-semibold">Ter</li>
+              <li class="w-[14%] font-semibold">Qua</li>
+              <li class="w-[14%] font-semibold">Qui</li>
+              <li class="w-[14%] font-semibold">Sex</li>
+              <li class="w-[14%] font-semibold">Sáb</li>
+            </ul>
+
+            <ul
+              id="dias"
+              class="flex flex-wrap items-center text-center mb-[10px]"
+            ></ul>
+          </div>
+        </div>
 
         <div
           class="absolute bottom-0 left-4 bg-red-600 px-2 py-1 rounded-[50%] text-slate-200"
