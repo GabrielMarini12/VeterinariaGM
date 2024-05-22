@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GM Vererinária</title>
+    <script type="module" crossorigin src="/VeterinariaGM/assets/fazerLogin-Bd-t5j47.js"></script>
+    <link rel="modulepreload" crossorigin href="/VeterinariaGM/assets/utilidades-BZvkuuvY.js">
+    <link rel="stylesheet" crossorigin href="/VeterinariaGM/assets/utilidades-C8J8L5WX.css">
+  </head>
+  <body>
+    <section class="flex flex-col justify-around bg-slate-300 h-[100vh]">
+      <div class="flex justify-center">
+        <img
+          src="/VeterinariaGM/assets/animais-GXXHSOH6.png"
+          alt="Imagem de animais"
+          class="w-[380px] h-auto"
+        />
+      </div>
+
+      <div class="flex justify-center relative">
+        <img
+          src="/VeterinariaGM/assets/logo-cao-DyHNuY2v.png"
+          alt="Imagem de um cachorro"
+          class="absolute right-0 top-0"
+        />
+        <form class="flex flex-col">
+          <p
+            class="mt-[-70px] flex justify-center mb-[20px] text-2xl text-cyan-700 uppercase"
+          >
+            Login
+          </p>
+
+          <label for="name-login" class="text-cyan-700 mb-[5px]">Nome</label>
+          <input
+            type="text"
+            id="name-login"
+            placeholder="Nome do seu animal..."
+            class="p-[8px] w-[250px] rounded-md border-none mb-[4px] placeholder:text-gray-300"
+          />
+          <small id="error-name-login" class="text-red-600 hidden"
+            >O nome está incorreto</small
+          >
+
+          <label for="password-login" class="text-cyan-700 mb-[5px]"
+            >Senha</label
+          >
+          <input
+            type="password"
+            id="password-login"
+            placeholder="Sua senha..."
+            class="p-[8px] w-[250px] rounded-md border-none mb-[4px] placeholder:text-gray-300"
+          />
+          <small id="error-password-login" class="text-red-600 hidden"
+            >A senha está incorreta</small
+          >
+        </form>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <button
+          id="btn-entrar-login"
+          class="w-[340px] p-[16px] uppercase rounded-md border-none bg-cyan-700 text-slate-200 mb-[10px] font-bold"
+        >
+          Entrar
+        </button>
+        <p class="text-[15px]">
+          Não tem uma conta?
+          <span
+            id="btn-cadastrar"
+            class="text-[16px] text-cyan-700 font-semibold"
+            >Cadastre-se</span
+          >
+        </p>
+      </div>
+    </section>
+
+    <script
+      src="https://kit.fontawesome.com/a101359c7d.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

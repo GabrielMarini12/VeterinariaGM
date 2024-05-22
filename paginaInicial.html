@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GM Vererinária</title>
+    <script type="module" crossorigin src="/VeterinariaGM/assets/paginaInicial-CXF6V7US.js"></script>
+    <link rel="modulepreload" crossorigin href="/VeterinariaGM/assets/utilidades-BZvkuuvY.js">
+    <link rel="stylesheet" crossorigin href="/VeterinariaGM/assets/utilidades-C8J8L5WX.css">
+  </head>
+  <body>
+    <div class="flex flex-col bg-slate-300 h-[100vh]">
+      <section
+        id="section-boas-vindas"
+        class="flex flex-col bg-cyan-700 px-[10px] py-[25px] rounded-br-lg rounded-bl-lg text-slate-200"
+      ></section>
+
+      <section class="mt-[25px] flex justify-around">
+        <button id="emoji-feliz" class="text-4xl">😀</button>
+        <button id="emoji-triste" class="text-4xl">😔</button>
+        <button id="emoji-doente" class="text-4xl">🤒</button>
+        <button id="emoji-serio" class="text-4xl">😐</button>
+      </section>
+
+      <section class="mt-[10px] flex justify-around pr-2">
+        <p class="text-[14px]">Ótimo</p>
+        <p class="text-[14px]">Triste</p>
+        <p class="text-[14px]">Doente</p>
+        <p class="text-[14px]">Ok</p>
+      </section>
+
+      <section class="py-[50px] px-[10px]">
+        <p class="text-cyan-700 uppercase mb-[10px]">Consulta & Agendamentos</p>
+
+        <div
+          id="agendar-consultas"
+          class="flex bg-slate-200 p-[10px] rounded-lg h-[100px] mb-[10px]"
+        >
+          <img
+            src="data:image/jpeg;base64,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"
+            alt="Calendário de agendamento"
+            class="w-[100px] rounded-lg mr-[10px] opacity-60"
+          />
+          <p class="text-cyan-700">Agende sua consulta...</p>
+        </div>
+
+        <div
+          id="ver-consultas"
+          class="flex bg-slate-200 p-[10px] rounded-lg h-[100px] mb-[10px]"
+        >
+          <img
+            src="/VeterinariaGM/assets/consulta-VcNnpQOa.jpg"
+            alt="Calendário de consulta"
+            class="w-[100px] rounded-lg mr-[10px] opacity-60"
+          />
+          <p class="text-cyan-700">Veja suas consultas marcadas...</p>
+        </div>
+      </section>
+
+      <footer
+        class="fixed w-[100%] bottom-0 bg-cyan-700 flex py-[14px] justify-around"
+      >
+        <a href="./paginaInicial.html">
+          <i class="fa-solid fa-house text-slate-200"></i>
+        </a>
+        <a href="./agendarConsultas.html">
+          <i class="fa-solid fa-pen-to-square text-slate-200"></i>
+        </a>
+        <a href="./verConsultas.html">
+          <i class="fa-solid fa-calendar-days text-slate-200"></i>
+        </a>
+        <a id="btn-sair">
+          <i class="fa-solid fa-right-from-bracket text-slate-200"></i>
+        </a>
+      </footer>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/a101359c7d.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

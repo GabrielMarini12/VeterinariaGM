@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GM Vererinária</title>
+    <script type="module" crossorigin src="/VeterinariaGM/assets/agendarCalendario-DPixKFCQ.js"></script>
+    <link rel="modulepreload" crossorigin href="/VeterinariaGM/assets/utilidades-BZvkuuvY.js">
+    <link rel="stylesheet" crossorigin href="/VeterinariaGM/assets/utilidades-C8J8L5WX.css">
+    <link rel="stylesheet" crossorigin href="/VeterinariaGM/assets/agendarCalendario-DPyza75r.css">
+  </head>
+  <body>
+    <div class="flex flex-col bg-slate-300 h-[100vh]">
+      <section
+        id="section-boas-vindas-calendario"
+        class="flex flex-col bg-cyan-700 px-[10px] py-[25px] rounded-br-lg rounded-bl-lg text-slate-200"
+      ></section>
+
+      <section class="py-[50px] px-[10px] relative">
+        <p class="text-cyan-700 uppercase mb-[10px]">
+          Calendário de agendamentos
+        </p>
+
+        <div
+          id="selecionador-data-container"
+          class="relative flex flex-col items-center justify-center p-[10px]"
+        >
+          <div class="datepicker-container">
+            <input
+              type="text"
+              class="date-input"
+              placeholder="Selecionar data"
+            />
+
+            <div class="datepicker" hidden>
+              <!-- .datepicker-header -->
+              <div class="datepicker-header">
+                <button class="prev">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+                <div>
+                  <select class="month-input">
+                    <option>Janeiro</option>
+                    <option>Favereiro</option>
+                    <option>Março</option>
+                    <option>Abril</option>
+                    <option>Maio</option>
+                    <option>Junho</option>
+                    <option>Julho</option>
+                    <option>Agosto</option>
+                    <option>Setembro</option>
+                    <option>Outubro</option>
+                    <option>Novembro</option>
+                    <option>Dezembro</option>
+                  </select>
+                  <input type="number" class="year-input" />
+                </div>
+
+                <button class="next">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+              <!-- /.datepicker-header -->
+
+              <!-- .days -->
+              <div class="days">
+                <span>Dom</span>
+                <span>Seg</span>
+                <span>Ter</span>
+                <span>Qua</span>
+                <span>Qui</span>
+                <span>Sex</span>
+                <span>Sáb</span>
+              </div>
+              <!-- /.days -->
+
+              <!-- .dates -->
+              <div class="dates"></div>
+              <!-- /.dates -->
+
+              <!-- .datepicker-footer -->
+              <div class="datepicker-footer">
+                <button class="cancel">Cancelar</button>
+                <button class="apply">Agendar</button>
+              </div>
+              <!-- /.datepicker-footer -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        class="fixed w-[100%] bottom-0 bg-cyan-700 flex py-[14px] justify-around"
+      >
+        <a href="./paginaInicial.html">
+          <i class="fa-solid fa-house text-slate-200"></i>
+        </a>
+        <a href="./agendarConsultas.html">
+          <i class="fa-solid fa-pen-to-square text-slate-200"></i>
+        </a>
+        <a href="./verConsultas.html">
+          <i class="fa-solid fa-calendar-days text-slate-200"></i>
+        </a>
+        <a id="btn-sair">
+          <i class="fa-solid fa-right-from-bracket text-slate-200"></i>
+        </a>
+      </footer>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/a101359c7d.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
