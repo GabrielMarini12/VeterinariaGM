@@ -1,5 +1,6 @@
 import { criarCalendario } from "./src/calendario";
-import { pegarNomeUsuarioCalendario } from "./src/utilidades";
+import { pegarNomeUsuarioCalendario, sair } from "./src/utilidades";
 
 pegarNomeUsuarioCalendario();
 criarCalendario();
+sair();

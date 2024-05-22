@@ -93,6 +93,13 @@ export function fazerLogin() {
   });
 }
 
+export function sair() {
+  const btnSair = document.getElementById("btn-sair");
+  btnSair.addEventListener("click", () => {
+    window.location.href = "./index.html";
+  });
+}
+
 export function salvarLocalStorage(chave, informacao) {
   localStorage.setItem(chave, JSON.stringify(informacao));
 }
